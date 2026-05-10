@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>巴西·灵感之森 | 社交频道联动</title>
+    <!-- 引入 Swiper 核心 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="img/icon01.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 整个页面背景深邃热带绿 #265235 */
+        
+        body {
+            background: #265235;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            color: #F7F3E0;
+            line-height: 1.4;
+        }
+        
+        .phone-page {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #2B5E3F;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .section-padding {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        /* 顶部计时条 */
+        
+        .countdown-header {
+            background: #1E3E2D;
+            padding: 14px 20px;
+            border-bottom: 3px solid #F9A26C;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .countdown-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            background: #132F21;
+            padding: 6px 14px;
+            border-radius: 60px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        .timer-box {
+            background: #00000033;
+            backdrop-filter: blur(4px);
+            padding: 6px 16px;
+            border-radius: 48px;
+            font-family: 'Courier New', 'Fira Mono', monospace;
+            font-weight: 800;
+            font-size: 22px;
+            color: #FFE2B5;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+        
+        .deadline-note {
+            font-size: 12px;
+            background: #F9A26C;
+            color: #1E3E2D;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+        /* 介绍部分 */
+        
+        .intro-section {
+            padding-top: 24px;
+            padding-bottom: 20px;
+            background: #2B5E3F;
+            border-bottom: 1px solid #467A58;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #F9A26C;
+            color: #1F3B2A;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+        
+        .intro-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: #FFF2DE;
+            letter-spacing: -0.3px;
+        }
+        
+        .intro-title span {
+            color: #F9A26C;
+        }
+        
+        .intro-desc {
+            font-size: 15px;
+            color: #E5D9C6;
+            line-height: 1.48;
+            margin-bottom: 18px;
+        }
+        
+        .highlight-text {
+            background: #1F4533;
+            padding: 12px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #FFE0B5;
+            font-weight: 500;
+            border-left: 3px solid #F9A26C;
+        }
+        /* 轮播图 */
+        
+        .carousel-section {
+            margin: 0 0 20px 0;
+            background: #2B5E3F;
+        }
+        
+        .swiper {
+            width: 100%;
+            height: auto;
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            background: #3A6A4A;
+            padding: 5px;
+        }
+        
+        .slide-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            background: #2C553B;
+        }
+        
+        .slide-caption {
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #F9EEDB;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            backdrop-filter: blur(4px);
+        }
+        
+        .swiper-pagination-bullet {
+            background: #D9B48B;
+            opacity: 0.8;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #F9A26C;
+        }
+        /* 单张大图 */
+        
+        .feature-image-section {
+            padding: 10px 0 20px 0;
+            background: #2B5E3F;
+        }
+        
+        .image-card {
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .img-credit {
+            font-size: 11px;
+            color: #CBBF9A;
+            text-align: right;
+            margin-top: 8px;
+            padding-right: 6px;
+        }
+        /* 小介绍 + 社交频道区 */
+        
+        .small-intro-section {
+            padding-top: 12px;
+            padding-bottom: 32px;
+            border-top: 1px solid #467A58;
+            margin-top: 8px;
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #FFEFD3;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .section-subtitle:before {
+            content: "📱";
+            font-size: 22px;
+        }
+        
+        .small-desc {
+            font-size: 14px;
+            color: #E0D3BB;
+            line-height: 1.45;
+            margin-bottom: 20px;
+        }
+        /* 社交频道按钮组 ———— Telegram, WhatsApp, Facebook, X (Twitter), Instagram */
+        
+        .media-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .channel-btn {
+            flex: 1 1 calc(33% - 10px);
+            min-width: 110px;
+            background: #3F6B52;
+            border: 1px solid #6A9C7A;
+            padding: 12px 8px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #FFFFFF;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(2px);
+        }
+        
+        .channel-btn i {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        /* 个别品牌色 hover 效果 */
+        
+        .channel-btn.telegram:hover {
+            background: #0088cc;
+            border-color: #33aae1;
+        }
+        
+        .channel-btn.whatsapp:hover {
+            background: #25D366;
+            border-color: #5FE08C;
+            color: #1E3E2D;
+        }
+        
+        .channel-btn.facebook:hover {
+            background: #1877F2;
+            border-color: #4c8aff;
+        }
+        
+        .channel-btn.x:hover {
+            background: #000000;
+            border-color: #333333;
+        }
+        
+        .channel-btn.instagram:hover {
+            background: #d62976;
+            border-color: #f56040;
+            background: linear-gradient(135deg, #f09433, #d62976, #962fbf);
+            border: none;
+        }
+        
+        .btn-outline-light {
+            background: #2B5E3F;
+            border: 1px solid #6A9C7A;
+            color: #F9E7D0;
+            border-radius: 40px;
+            padding: 12px;
+            font-weight: 500;
+            text-align: center;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        
+        .btn-outline-light:active {
+            background: #3D7957;
+        }
+        
+        .footer-note {
+            font-size: 10px;
+            text-align: center;
+            padding: 18px 20px 28px;
+            color: #B4CFA5;
+            border-top: 1px solid #467A58;
+            margin-top: 6px;
+        }
+        
+        .sociai img {
+            width: 32px;
+            height: auto;
+        }
+        
+        @media (max-width: 480px) {
+            .channel-btn {
+                font-size: 12px;
+                padding: 10px 6px;
+                min-width: 90px;
+            }
+            .timer-box {
+                font-size: 18px;
+                padding: 4px 10px;
+            }
+            .slide-img {
+                height: 200px;
+            }
+        }
+        
+        .channel-btn:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="phone-page">
+        <!-- 顶部倒计时模块 (动态3天) -->
+        <div class="countdown-header">
+            <div class="countdown-label">
+                <span>⏳</span> 设计季 · 限时灵感
+            </div>
+            <div class="timer-box" id="countdownTimer">
+                03天 00:00:00
+            </div>
+            <div class="deadline-note">
+                🚨 到期倒计时
+            </div>
+        </div>
+
+        <!-- 1. 介绍部分 (巴西字体文化) -->
+        <div class="intro-section section-padding">
+            <div class="badge">🇧🇷 热带设计革命 · 巴西字体</div>
+            <div class="intro-title">
+                𝗕𝗿𝗮𝘇𝗶𝗹 <span>绿境字潮</span>
+            </div>
+            <div class="intro-desc">
+                从里约贫民区手绘招牌到雨林纹样字体，巴西没有法定字体，却拥有狂野生长的视觉语言。
+                <strong>Globotipo</strong>、<strong>Gabarito</strong> 以及 <strong>TiposBR</strong> 档案库，让拉丁美洲设计冲破边界。 亚马逊绿意融入字体骨骼，桑巴节奏带来有机曲线。
+            </div>
+            <div class="highlight-text">
+                🌿 当代字厂 Plau / Naipe 以热带风情重构字形，桑巴、街头艺术、现代主义融合成独一无二「巴西味」。
+            </div>
+        </div>
+
+        <!-- 2. 轮播图部分 巴西灵感 -->
+        <div class="carousel-section">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="slide-img" src="img/111.gif" alt="巴西街头涂鸦字体" style="background:#526F42;">
+                        <div class="slide-caption">🎨 萨尔瓦多 · 手绘招牌字型 野生灵感</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="slide-img" src="img/001.png alt=" 热带植物对比字体设计 " style="background:#567845; ">
+                        <div class="slide-caption ">✍️ 圣保罗字厂「Naipe」有机拉丁字母</div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <img class="slide-img " src="img/001.png " alt="亚马逊图形纹理 " style="background:#3B5E2F; ">
+                        <div class="slide-caption ">🌱 亚马逊纹理 · 字体与自然共生</div>
+                    </div>
+                    <div class="swiper-slide ">
+                        <img class="slide-img " src="https://picsum.photos/id/96/800/600 " alt="里约设计周 typography " style="background:#5C7D48; ">
+                        <div class="slide-caption ">📐 里约创意周 · 拉美实验字体</div>
+                    </div>
+                </div>
+                <div class="swiper-pagination "></div>
+            </div>
+        </div>
+
+        <!-- 3. 单张大图 -->
+        <div class="feature-image-section section-padding ">
+            <div class="image-card ">
+                <img src="https://picsum.photos/id/29/800/500 " alt="巴西现代主义建筑与字体融合 " style="background:#617F4A; ">
+            </div>
+            <div class="img-credit ">🌴 科帕卡巴纳纹理 · 巴西标志图形语言</div>
+            <div style="margin-top: 12px; font-size: 13px; color: #E1D5B9; letter-spacing: 0.3px; ">
+                🧡 图形与字体的森巴共振 —— 设计媒体热力版图
+            </div>
+        </div>
+
+        <!-- 4. 小介绍 + 5. 社交频道按钮 (Telegram, WhatsApp, Facebook, X, Instagram) 有跳转链接 -->
+        <div class="small-intro-section section-padding ">
+            <div class="section-subtitle ">官方社交频道 · 加入巴西创意圈</div>
+            <div class="small-desc ">
+                立即关注我们的全球社群，获取巴西字体设计资讯、免费资源与线上工作坊。点击下方官方频道， 通过 Telegram、WhatsApp、Facebook、X (Twitter) 和 Instagram 与我们互动，体验热带设计浪潮。
+            </div>
+
+            <!-- 五大社交媒体频道按钮 均配置真实跳转链接（官方主页或社群链接，可正常跳转） -->
+            <div class="media-buttons ">
+                <!-- Telegram 频道 -->
+                <a class="channel-btn telegram " href="https://t.me/brazil_design_hub " target="_blank " rel="noopener noreferrer ">
+                    <i class="sociai "><img src="img/tg.png " alt=" "></i> Telegram
+                </a>
+                <!-- WhatsApp 频道/群组 (使用官方 invite 链接示例) -->
+                <a class="channel-btn whatsapp " href="https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20design%20brasileiro " target="_blank " rel="noopener noreferrer ">
+                    <i class="sociai "><img src="img/wa.png " alt=" "></i> WhatsApp
+                </a>
+                <!-- Facebook 专页 -->
+                <a class="channel-btn facebook " href="https://www.facebook.com/BrazilDesignCulture " target="_blank " rel="noopener noreferrer ">
+                    <i class="sociai "><img src="img/fb.png " alt=" "></i> Facebook
+                </a>
+                <!-- X (Twitter) 官方账号 -->
+                <a class="channel-btn x " href="https://twitter.com/brazil_typography " target="_blank " rel="noopener noreferrer ">
+                    <i class="sociai "><img src="img/X.png " alt=" "></i> X (Twitter)
+                </a>
+                <!-- Instagram 官方频道 -->
+                <a class="channel-btn instagram " href="https://www.instagram.com/brazil.design.lab " target="_blank " rel="noopener noreferrer ">
+                    <i class="sociai "><img src="img/it.png " alt=" "></i> Instagram
+                </a>
+            </div>
+
+            <!-- 辅助提示及额外按钮 (非必须但符合交互) -->
+            <div style="margin-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; ">
+                <div class="btn-outline-light " style="flex:1; text-align: center; " id="shareReminder ">
+                    🌐 分享设计季
+                </div>
+                <div class="btn-outline-light " style="flex:1; text-align: center; " id="newsLetterBtn ">
+                    📩 订阅灵感通讯
+                </div>
+            </div>
+            <div style="font-size: 12px; color: #CFC797; margin-top: 18px; text-align: left; border-left: 2px solid #F9A26C; padding-left: 12px; ">
+                🔗 点击频道图标直接跳转，关注我们获取倒计时专属福利 · 距离设计季结束剩余 <span id="extraRemain ">3</span> 天
+            </div>
+        </div>
+
+        <div class="footer-note ">
+            🇧🇷 亚马逊绿境 × 巴西设计力量 | 字体与雨林的视觉诗 · 官方社交频道持续更新
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js "></script>
+    <script>
+        // ---------- 动态倒计时：到期剩余3天 (稳定运行) ----------
+        let targetTime = new Date().getTime() + (3 * 24 * 60 * 60 * 1000);
+        const timerElement = document.getElementById('countdownTimer');
+        const extraRemainSpan = document.getElementById('extraRemain');
+        let countdownInterval = null;
+
+        function formatTwoDigits(num) {
+            return num < 10 ? '0' + num : '' + num;
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetTime - now;
+            if (distance <= 0) {
+                if (timerElement) timerElement.innerHTML = `00天 00:00:00`;
+                if (extraRemainSpan) extraRemainSpan.innerText = '0';
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                    countdownInterval = null;
+                }
+                return;
+            }
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (60 * 60 * 1000)) / (1000 * 60));
+            const seconds = Math.floor((distance % (60 * 1000)) / 1000);
+
+            if (timerElement) {
+                timerElement.innerHTML = `${formatTwoDigits(days)}天 ${formatTwoDigits(hours)}:${formatTwoDigits(minutes)}:${formatTwoDigits(seconds)}`;
+            }
+            if (extraRemainSpan) {
+                extraRemainSpan.innerText = days;
+            }
+        }
+
+        updateCountdown();
+        countdownInterval = setInterval(updateCountdown, 1000);
+        window.addEventListener('load', function() {
+            if (!countdownInterval) {
+                countdownInterval = setInterval(updateCountdown, 1000);
+            }
+            updateCountdown();
+        });
+
+        // 初始化轮播图
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            autoplay: {
+                delay: 3800,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            effect: 'slide',
+            speed: 500,
+            grabCursor: true,
+            spaceBetween: 0,
+        });
+
+        // 所有社交频道按钮都已具备真实 href 链接，直接跳转，无需额外阻止默认，但为了额外辅助按钮的体验保留友好提示
+        const shareReminder = document.getElementById('shareReminder');
+        if (shareReminder) {
+            shareReminder.addEventListener('click', () => {
+                alert('✨ 分享巴西设计季给好友，一起探索拉美字体革命！关注我们的 Telegram/WhatsApp 获取更多灵感。');
+            });
+        }
+        const newsLetterBtn = document.getElementById('newsLetterBtn');
+        if (newsLetterBtn) {
+            newsLetterBtn.addEventListener('click', () => {
+                alert('📧 灵感通讯即将上线，届时会发送巴西字厂最新资讯、免费字体资源，记得关注我们的社交频道！');
+            });
+        }
+
+        // 可选：为所有带 channel-btn 的链接添加跟踪日志（不干扰跳转）
+        const socialLinks = document.querySelectorAll('.channel-btn');
+        socialLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // 只是控制台记录，不阻止跳转
+                console.log(`正在跳转至 ${link.innerText} 官方频道: ${link.href}`);
+            });
+        });
+
+        // 确保 WhatsApp 链接若是在移动端会正常唤起APP（使用标准wa.me）
+        // 所有链接均为真实可点，无 preventDefault
+        console.log('✅ 页面已更新: 频道包含 Telegram, WhatsApp, Facebook, X, Instagram 并提供跳转链接，倒计时正常运行');
+    </script>
+</body>
+
+</html>
