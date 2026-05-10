@@ -357,13 +357,13 @@
         <!-- 顶部倒计时模块 (动态3天) -->
         <div class="countdown-header">
             <div class="countdown-label">
-                <span>⏳</span> 设计季 · 限时灵感
+                <span>⏳</span> Dizaina sezona · Ierobežota laika iedvesma
             </div>
             <div class="timer-box" id="countdownTimer">
-                03天 00:00:00
+                03dia 00:00:00
             </div>
             <div class="deadline-note">
-                🚨 到期倒计时
+                🚨 Comece nesse horário.
             </div>
         </div>
 
@@ -371,14 +371,16 @@
         <div class="intro-section section-padding">
             <div class="badge">🇧🇷 热带设计革命 · 巴西字体</div>
             <div class="intro-title">
-                𝗕𝗿𝗮𝘇𝗶𝗹 <span>绿境字潮</span>
+                6Gwin <span>Bem-vindo(a) ao</span>
             </div>
+            <!--
             <div class="intro-desc">
                 从里约贫民区手绘招牌到雨林纹样字体，巴西没有法定字体，却拥有狂野生长的视觉语言。
                 <strong>Globotipo</strong>、<strong>Gabarito</strong> 以及 <strong>TiposBR</strong> 档案库，让拉丁美洲设计冲破边界。 亚马逊绿意融入字体骨骼，桑巴节奏带来有机曲线。
             </div>
+        -->
             <div class="highlight-text">
-                🌿 当代字厂 Plau / Naipe 以热带风情重构字形，桑巴、街头艺术、现代主义融合成独一无二「巴西味」。
+                🌿 Prêmios generosos, recebendo sem parar. O grande prêmio do jogo "corra e resgate" está esperando por você no 6Gwin. 。
             </div>
         </div>
 
@@ -388,15 +390,15 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img class="slide-img" src="img/001.png" alt="巴西街头涂鸦字体" style="background:#526F42;">
-                        <div class="slide-caption">🎨 萨尔瓦多 · 手绘招牌字型 野生灵感</div>
+                        <div class="slide-caption">🎨 邀请活动</div>
                     </div>
                     <div class="swiper-slide">
                         <img class="slide-img" src="img/002.png" alt=" 热带植物对比字体设计 " style="background:#567845; ">
-                        <div class="slide-caption ">✍️ 圣保罗字厂「Naipe」有机拉丁字母</div>
+                        <div class="slide-caption ">✍️佣金</div>
                     </div>
                     <div class="swiper-slide ">
-                        <img class="slide-img " src="img/003.png " alt="亚马逊图形纹理 " style="background:#3B5E2F; ">
-                        <div class="slide-caption ">🌱 亚马逊纹理 · 字体与自然共生</div>
+                        <img class="slide-img " src="img/003.png" alt="亚马逊图形纹理 " style="background:#3B5E2F; ">
+                        <div class="slide-caption ">🌱 vip</div>
                     </div>
                     <div class="swiper-slide ">
                         <img class="slide-img " src="https://picsum.photos/id/96/800/600 " alt="里约设计周 typography " style="background:#5C7D48; ">
@@ -449,22 +451,13 @@
                 </a>
             </div>
 
-            <!-- 辅助提示及额外按钮 (非必须但符合交互) -->
-            <div style="margin-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; ">
-                <div class="btn-outline-light " style="flex:1; text-align: center; " id="shareReminder ">
-                    🌐 分享设计季
-                </div>
-                <div class="btn-outline-light " style="flex:1; text-align: center; " id="newsLetterBtn ">
-                    📩 订阅灵感通讯
-                </div>
-            </div>
             <div style="font-size: 12px; color: #CFC797; margin-top: 18px; text-align: left; border-left: 2px solid #F9A26C; padding-left: 12px; ">
-                🔗 点击频道图标直接跳转，关注我们获取倒计时专属福利 · 距离设计季结束剩余 <span id="extraRemain ">3</span> 天
+                🔗 点击频道图标直接跳转，关注我们获取倒计时专属福利 · 距离设计季结束剩余 <span id="extraRemain ">3</span> dia
             </div>
         </div>
 
         <div class="footer-note ">
-            🇧🇷 亚马逊绿境 × 巴西设计力量 | 字体与雨林的视觉诗 · 官方社交频道持续更新
+            6Gwin Tropical Faz de Você uma Família Rica
         </div>
     </div>
 
@@ -498,7 +491,7 @@
             const seconds = Math.floor((distance % (60 * 1000)) / 1000);
 
             if (timerElement) {
-                timerElement.innerHTML = `${formatTwoDigits(days)}天 ${formatTwoDigits(hours)}:${formatTwoDigits(minutes)}:${formatTwoDigits(seconds)}`;
+                timerElement.innerHTML = `${formatTwoDigits(days)}dia ${formatTwoDigits(hours)}:${formatTwoDigits(minutes)}:${formatTwoDigits(seconds)}`;
             }
             if (extraRemainSpan) {
                 extraRemainSpan.innerText = days;
@@ -531,19 +524,6 @@
             spaceBetween: 0,
         });
 
-        // 所有社交频道按钮都已具备真实 href 链接，直接跳转，无需额外阻止默认，但为了额外辅助按钮的体验保留友好提示
-        const shareReminder = document.getElementById('shareReminder');
-        if (shareReminder) {
-            shareReminder.addEventListener('click', () => {
-                alert('✨ 分享巴西设计季给好友，一起探索拉美字体革命！关注我们的 Telegram/WhatsApp 获取更多灵感。');
-            });
-        }
-        const newsLetterBtn = document.getElementById('newsLetterBtn');
-        if (newsLetterBtn) {
-            newsLetterBtn.addEventListener('click', () => {
-                alert('📧 灵感通讯即将上线，届时会发送巴西字厂最新资讯、免费字体资源，记得关注我们的社交频道！');
-            });
-        }
 
         // 可选：为所有带 channel-btn 的链接添加跟踪日志（不干扰跳转）
         const socialLinks = document.querySelectorAll('.channel-btn');
