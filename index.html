@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>6Gwin.com</title>
-    <!-- 引入 Swiper 核心 CSS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="shortcut icon" href="img/icon01.ico">
     <style>
@@ -14,10 +14,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-        /* 整个页面背景深邃热带绿 #265235 */
         
         body {
-            background: #265235;
+            background: #07411a;
             font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
             color: #F7F3E0;
             line-height: 1.4;
@@ -26,7 +25,7 @@
         .phone-page {
             max-width: 500px;
             margin: 0 auto;
-            background: #2B5E3F;
+            background: #154b2b;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
             min-height: 100vh;
             overflow-x: hidden;
@@ -37,7 +36,6 @@
             padding-left: 20px;
             padding-right: 20px;
         }
-        /* 顶部计时条 */
         
         .countdown-header {
             background: #1E3E2D;
@@ -83,7 +81,6 @@
             border-radius: 30px;
             font-weight: bold;
         }
-        /* 介绍部分 */
         
         .intro-section {
             padding-top: 24px;
@@ -133,7 +130,6 @@
             font-weight: 500;
             border-left: 3px solid #F9A26C;
         }
-        /* 轮播图 */
         
         .carousel-section {
             margin: 0 0 20px 0;
@@ -178,7 +174,6 @@
         .swiper-pagination-bullet-active {
             background: #F9A26C;
         }
-        /* 单张大图 */
         
         .feature-image-section {
             padding: 10px 0 20px 0;
@@ -205,7 +200,6 @@
             margin-top: 8px;
             padding-right: 6px;
         }
-        /* 小介绍 + 社交频道区 */
         
         .small-intro-section {
             padding-top: 12px;
@@ -235,14 +229,13 @@
             line-height: 1.45;
             margin-bottom: 20px;
         }
-        /* 社交频道按钮组 ———— Telegram, WhatsApp, Facebook, X (Twitter), Instagram */
         
         .media-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
-            margin-top: 12px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
         
         .channel-btn {
@@ -250,8 +243,8 @@
             min-width: 110px;
             background: #3F6B52;
             border: 1px solid #6A9C7A;
-            padding: 12px 8px;
-            border-radius: 60px;
+            padding: 8px;
+            border-radius: 40px;
             font-weight: 600;
             font-size: 14px;
             color: #FFFFFF;
@@ -271,7 +264,6 @@
             font-weight: 500;
             font-size: 18px;
         }
-        /* 个别品牌色 hover 效果 */
         
         .channel-btn.telegram:hover {
             background: #0088cc;
@@ -357,7 +349,7 @@
 
 <body>
     <div class="phone-page">
-        <!-- 顶部倒计时模块 (动态3天) -->
+
         <div class="countdown-header">
             <div class="countdown-label">
                 <span>⏳</span> Dizaina sezona · Ierobežota laika iedvesma
@@ -370,55 +362,48 @@
             </div>
         </div>
 
-        <!-- 1. 介绍部分 (巴西字体文化) -->
+        >
         <div class="intro-section section-padding">
-            <div class="badge">🇧🇷 热带设计革命 · 巴西字体</div>
+            <div class="badge">6Gwin Desejamos que você se torne rico.
+
+            </div>
             <div class="intro-title">
                 6Gwin <span>Bem-vindo(a) ao</span>
             </div>
-            <!--
-            <div class="intro-desc">
-                从里约贫民区手绘招牌到雨林纹样字体，巴西没有法定字体，却拥有狂野生长的视觉语言。
-                <strong>Globotipo</strong>、<strong>Gabarito</strong> 以及 <strong>TiposBR</strong> 档案库，让拉丁美洲设计冲破边界。 亚马逊绿意融入字体骨骼，桑巴节奏带来有机曲线。
-            </div>
-        -->
             <div class="highlight-text">
                 🌿 Prêmios generosos, recebendo sem parar. O grande prêmio do jogo "corra e resgate" está esperando por você no 6Gwin. 。
             </div>
         </div>
 
-        <!-- 2. 轮播图部分 巴西灵感 -->
         <div class="carousel-section">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img class="slide-img" src="img/yh001.png" alt="巴西街头涂鸦字体" style="background:#526F42;">
-                        <div class="slide-caption">🎨 邀请活动</div>
+                        <img class="slide-img" src="img/yh001.png" alt="Evento de convite" style="background:#526F42;">
+                        <div class="slide-caption">🎨 Evento de convite</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="slide-img" src="img/yh002.png" alt=" 热带植物对比字体设计 " style="background:#567845; ">
-                        <div class="slide-caption ">✍️佣金</div>
+                        <img class="slide-img" src="img/yh002.png" alt=" Comissão " style="background:#567845; ">
+                        <div class="slide-caption ">✍️Comissão</div>
                     </div>
                     <div class="swiper-slide ">
-                        <img class="slide-img " src="img/yh003.png" alt="亚马逊图形纹理 " style="background:#3B5E2F; ">
-                        <div class="slide-caption ">🌱 vip</div>
+                        <img class="slide-img " src="img/yh003.png" alt="Evento VIP" style="background:#3B5E2F; ">
+                        <div class="slide-caption ">🌱 Evento VIP</div>
                     </div>
                     <div class="swiper-slide ">
-                        <img class="slide-img " src="https://picsum.photos/id/96/800/600 " alt="里约设计周 typography " style="background:#5C7D48; ">
-                        <div class="slide-caption ">📐 里约创意周 · 拉美实验字体</div>
+                        <img class="slide-img " src="img/yh01.png" alt="Bônus de tarefa" typography " style="background:#5C7D48; ">
+                        <div class="slide-caption ">📐 Bônus de tarefa</div>
                     </div>
                 </div>
                 <div class="swiper-pagination "></div>
             </div>
         </div>
 
-        <!-- 3. 单张大图 -->
+
         <div class="feature-image-section section-padding ">
             <span>🔥Desfrute de elevadas percentagens de vitória💵</span>
             <div class="image-card ">
-                <img src="img/game1.png" alt="Para você aproveitar diferentes jogos e ganhar prêmios enormes.
-
-" style="background:#617F4A; ">
+                <img src="img/game1.png " alt="Para você aproveitar diferentes jogos e ganhar prêmios enormes. " style="background:#617F4A; ">
             </div>
             <div class="img-credit ">🌴Grandes prémios esperam por si!</div>
             <div style="margin-top: 12px; font-size: 13px; color: #E1D5B9; letter-spacing: 0.3px; ">
@@ -426,39 +411,31 @@
             </div>
         </div>
 
-        <!-- 4. 小介绍 + 5. 社交频道按钮 (Telegram, WhatsApp, Facebook, X, Instagram) 有跳转链接 -->
         <div class="small-intro-section section-padding ">
-            <div class="section-subtitle ">官方社交频道 · 加入巴西创意圈</div>
+            <div class="section-subtitle ">Canal social oficial · Junte-se ao 6Gwin</div>
             <div class="small-desc ">
-                立即关注我们的全球社群，获取巴西字体设计资讯、免费资源与线上工作坊。点击下方官方频道， 通过 Telegram、WhatsApp、Facebook、X (Twitter) 和 Instagram 与我们互动，体验热带设计浪潮。
+                Siga agora a nossa comunidade global e tenha acesso a bônus diários incríveis, bônus grátis e muito mais esperando por você. Clique nos canais oficiais abaixo e interaja conosco pelo Telegram, WhatsApp, Facebook, X (Twitter) e Instagram. Venha viver a
+                onda do design tropical!
             </div>
 
-            <!-- 五大社交媒体频道按钮 均配置真实跳转链接（官方主页或社群链接，可正常跳转） -->
+
             <div class="media-buttons ">
-                <!-- Telegram 频道 -->
+
                 <a class="channel-btn telegram " href="https://t.me/brazil_design_hub " target="_blank " rel="noopener noreferrer ">
                     <i class="sociai "><img src="img/tg.png " alt=" "></i> Telegram
                 </a>
-                <!-- WhatsApp 频道/群组 (使用官方 invite 链接示例) -->
+
                 <a class="channel-btn whatsapp " href="https://wa.me/5511999999999?text=Olá!%20Quero%20saber%20mais%20sobre%20design%20brasileiro " target="_blank " rel="noopener noreferrer ">
                     <i class="sociai "><img src="img/wa.png " alt=" "></i> WhatsApp
-                </a>
-                <!-- Facebook 专页 -->
-                <a class="channel-btn facebook " href="https://www.facebook.com/profile.php?id=61589450974452" target="_blank " rel="noopener noreferrer ">
+                </a> <br>
+
+                <a class="channel-btn facebook " href="https://www.facebook.com/profile.php?id=61589450974452 " target="_blank " rel="noopener noreferrer ">
                     <i class="sociai "><img src="img/fb.png " alt=" "></i> Facebook
                 </a>
-                <!-- X (Twitter) 官方账号 -->
-                <a class="channel-btn x " href="https://twitter.com/brazil_typography " target="_blank " rel="noopener noreferrer ">
-                    <i class="sociai "><img src="img/X.png " alt=" "></i> X (Twitter)
-                </a>
-                <!-- Instagram 官方频道 -->
+
                 <a class="channel-btn instagram " href="https://www.instagram.com/brazil.design.lab " target="_blank " rel="noopener noreferrer ">
                     <i class="sociai "><img src="img/it.png " alt=" "></i> Instagram
                 </a>
-            </div>
-
-            <div style="font-size: 12px; color: #CFC797; margin-top: 18px; text-align: left; border-left: 2px solid #F9A26C; padding-left: 12px; ">
-                🔗 点击频道图标直接跳转，关注我们获取倒计时专属福利 · 距离设计季结束剩余 <span id="extraRemain ">3</span> dia
             </div>
         </div>
 
@@ -469,7 +446,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js "></script>
     <script>
-        // ---------- 动态倒计时：到期剩余3天 (稳定运行) ----------
         let targetTime = new Date().getTime() + (3 * 24 * 60 * 60 * 1000);
         const timerElement = document.getElementById('countdownTimer');
         const extraRemainSpan = document.getElementById('extraRemain');
@@ -513,7 +489,7 @@
             updateCountdown();
         });
 
-        // 初始化轮播图
+       
         const swiper = new Swiper('.mySwiper', {
             loop: true,
             autoplay: {
@@ -531,18 +507,16 @@
         });
 
 
-        // 可选：为所有带 channel-btn 的链接添加跟踪日志（不干扰跳转）
+
         const socialLinks = document.querySelectorAll('.channel-btn');
         socialLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                // 只是控制台记录，不阻止跳转
-                console.log(`正在跳转至 ${link.innerText} 官方频道: ${link.href}`);
+
+                console.log(`Redirecionando para... ${link.innerText} 官方频道: ${link.href}`);
             });
         });
 
-        // 确保 WhatsApp 链接若是在移动端会正常唤起APP（使用标准wa.me）
-        // 所有链接均为真实可点，无 preventDefault
-        console.log('✅ 页面已更新: 频道包含 Telegram, WhatsApp, Facebook, X, Instagram 并提供跳转链接，倒计时正常运行');
+        console.log('✅ Página atualizada: os canais incluem Telegram, WhatsApp, Facebook e Instagram, com links de redirecionamento. A contagem regressiva está funcionando normalmente.');
     </script>
 </body>
 
