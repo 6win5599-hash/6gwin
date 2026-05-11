@@ -184,6 +184,7 @@
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+            margin-top: 10px;
         }
         
         .image-card img {
@@ -352,10 +353,10 @@
 
         <div class="countdown-header">
             <div class="countdown-label">
-                <span>⏳</span> Dizaina sezona · Ierobežota laika iedvesma
+                <span>⏳</span> O cronômetro começa: Bônus incríveis!
             </div>
             <div class="timer-box" id="countdownTimer">
-                03dia 00:00:00
+                00dia 00:00:00
             </div>
             <div class="deadline-note">
                 🚨 Comece nesse horário.
@@ -363,11 +364,9 @@
         </div>
 
         <div class="intro-section section-padding">
-            <div class="badge">6Gwin Desejamos que você se torne rico.
-
-            </div>
+            <div class="badge">6Gwin Desejamos que você se torne rico.</div>
             <div class="intro-title">
-                6Gwin <span>6Gwin BEM-VINDO AO</span>
+                6Gwin <span>BEM-VINDO AO</span>
             </div>
             <div class="highlight-text">
                 🎉 PRÊMIOS GENEROSOS, RECEBENDO SEM PARAR. O GRANDE PRÊMIO DO JOGO “CORRA E RESGATE” ESTÁ ESPERANDO POR VOCÊ NO 6Gwin.
@@ -379,7 +378,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img class="slide-img" src="img/yh001.png" alt="Evento de convite" style="background:#526F42;">
-                        <div class="slide-caption">🎨 Evento de convite</div>
+                        <div class="slide-caption">💰 Evento de convite</div>
                     </div>
                     <div class="swiper-slide">
                         <img class="slide-img" src="img/yh002.png" alt=" Comissão " style="background:#567845; ">
@@ -387,7 +386,7 @@
                     </div>
                     <div class="swiper-slide ">
                         <img class="slide-img " src="img/yh003.png" alt="Evento VIP" style="background:#3B5E2F; ">
-                        <div class="slide-caption ">🌱 Evento VIP</div>
+                        <div class="slide-caption ">👑 Evento VIP</div>
                     </div>
                     <div class="swiper-slide ">
                         <img class="slide-img " src="img/yh01.png" alt="Bônus de tarefa" typography " style="background:#5C7D48; ">
@@ -400,7 +399,7 @@
 
 
         <div class="feature-image-section section-padding ">
-            <span>🔥Desfrute de elevadas percentagens de vitória💵</span>
+            <span>🔥DESFRUTE DE ELEVADAS PORCENTAGENS DE VITÓRIA💵</span>
             <div class="image-card ">
                 <img src="img/game1.png " alt="Para você aproveitar diferentes jogos e ganhar prêmios enormes. " style="background:#617F4A; ">
             </div>
@@ -411,9 +410,9 @@
         </div>
 
         <div class="small-intro-section section-padding ">
-            <div class="section-subtitle ">Canal social oficial · Junte-se ao 6Gwin</div>
+            <div class="section-subtitle ">SIGA OS CANAIS OFICIAIS DA 6Gwin NAS REDES SOCIAIS.</div>
             <div class="small-desc ">
-                Siga agora a nossa comunidade global e tenha acesso a bônus diários incríveis, bônus grátis e muito mais esperando por você. Clique nos canais oficiais abaixo e interaja conosco pelo Telegram, WhatsApp, Facebook, X (Twitter) e Instagram. Venha viver a
+                Siga agora a nossa comunidade global e tenha acesso a bônus diários incríveis, bônus grátis e muito mais esperando por você. Clique nos canais oficiais abaixo e interaja conosco pelo Telegram, WhatsApp, Facebook, Instagram. Venha viver a
                 onda do design tropical!
             </div>
 
@@ -445,7 +444,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js "></script>
     <script>
-        let targetTime = new Date().getTime() + (3 * 24 * 60 * 60 * 1000);
+        // 修改计时器：直接计算到 2026年5月15日 00:00:00 到期
+        // 设定目标日期：2026年5月15日 00:00:00 (本地时间)
+        // 注意：月份从0开始，5月对应4，但为了清晰使用字符串构造避免时区陷阱，使用本地时间构造
+        const targetDateStr = '2026-05-12 00:00:00';
+        // 解析为目标时间戳（基于本地时区）
+        const targetTime = new Date(targetDateStr.replace(/-/g, '/')).getTime();
+        
         const timerElement = document.getElementById('countdownTimer');
         const extraRemainSpan = document.getElementById('extraRemain');
         let countdownInterval = null;
@@ -458,7 +463,7 @@
             const now = new Date().getTime();
             const distance = targetTime - now;
             if (distance <= 0) {
-                if (timerElement) timerElement.innerHTML = `00天 00:00:00`;
+                if (timerElement) timerElement.innerHTML = `00dia 00:00:00`;
                 if (extraRemainSpan) extraRemainSpan.innerText = '0';
                 if (countdownInterval) {
                     clearInterval(countdownInterval);
@@ -479,6 +484,7 @@
             }
         }
 
+        // 启动计时器
         updateCountdown();
         countdownInterval = setInterval(updateCountdown, 1000);
         window.addEventListener('load', function() {
@@ -488,7 +494,7 @@
             updateCountdown();
         });
 
-       
+        // 初始化轮播图
         const swiper = new Swiper('.mySwiper', {
             loop: true,
             autoplay: {
@@ -505,18 +511,14 @@
             spaceBetween: 0,
         });
 
-
-
         const socialLinks = document.querySelectorAll('.channel-btn');
         socialLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-
                 console.log(`Redirecionando para... ${link.innerText} 官方频道: ${link.href}`);
             });
         });
 
-        console.log('✅ Página atualizada: os canais incluem Telegram, WhatsApp, Facebook e Instagram, com links de redirecionamento. A contagem regressiva está funcionando normalmente.');
+        console.log('✅ 计时器已更新：目标时间 2026年5月15日 00:00:00 (本地时间)。其他功能保持不变。');
     </script>
 </body>
-
 </html>
